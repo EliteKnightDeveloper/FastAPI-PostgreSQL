@@ -5,7 +5,7 @@ ENV = dotenv_values(".env")
 
 
 class Settings:
-    PROJECT_NAME: str = "Job Board"
+    PROJECT_NAME: str = "FastAPI-PostgreSQL-DEMO"
     PROJECT_VERSION: str = "1.0.0"
 
     POSTGRES_USER: str = ENV["POSTGRES_USER"]
