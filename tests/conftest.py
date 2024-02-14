@@ -1,4 +1,4 @@
-from apis.base import api_router
+from apis.route import api_router
 from db.session import get_db
 from db.base import Base
 from typing import Any

@@ -7,7 +7,7 @@ from schemas.blog import ShowBlog, CreateBlog, UpdateBlog
 from db.repository.blog import create_new_blog, retreive_blog, list_blogs, delete_blog, update_blog
 from typing import List
 from db.models.user import Users
-from apis.v1.route_login import get_current_user
+from apis.v1.controller_login import get_current_user
 
 router = APIRouter()
 
