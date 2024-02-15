@@ -36,7 +36,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
     access_token = create_access_token(
         data={"sub": user.email}
     )
-    return {"access_token": access_token, "token_type": "bearer"}
+    return {"access_token": "Bearer " + access_token}
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
