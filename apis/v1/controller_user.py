@@ -8,11 +8,11 @@ from db.repository.user import create_new_user
 
 router = APIRouter()
 
+
 @router.post("/users", response_model=ShowUser, status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     try:
         user = create_new_user(user=user, db=db)
         return user
     except Exception as e:
-        print(user)
         raise HTTPException(status_code=500, detail="Internal Server Error")

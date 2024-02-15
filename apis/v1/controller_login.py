@@ -1,5 +1,3 @@
-from datetime import timedelta
-
 from core.config import settings  # new
 from core.hashing import Hasher
 from core.security import create_access_token
@@ -20,7 +18,6 @@ router = APIRouter()
 
 def authenticate_user(email: str, password: str, db: Session):
     user = get_user(email=email, db=db)
-    print(user)
     if not user:
         return False
     if not Hasher.verify_password(password, user.password):
